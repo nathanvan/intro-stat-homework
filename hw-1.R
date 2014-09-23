@@ -41,7 +41,9 @@ for (pkg in required.packages) {
 }
 
 cat('Attempting to load required datasets...\n')
+cat('... cdc: BRFSS subset from Lecture 1-21\n')
 source.setup( "data/cdc.R" )
+
 
 ## Clean up
 rm(source.setup, required.packages)
