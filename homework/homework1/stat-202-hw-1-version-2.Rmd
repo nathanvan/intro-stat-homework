@@ -1,0 +1,336 @@
+---
+title: "Homework 1 -- Version 2"
+author: "YOUR NAME""
+date: "09/26/2014"  
+output: html_document
+---
+To prepare for this homework, do the following: 
+
+1. On line 3 of this document, replace "YOUR NAME" with your name. 
+2. Place your cursor on line 12 of this document and press CTRL-Enter:
+```{r}
+source('http://www.stat.cmu.edu/~nmv/setup/stat202/hw-1.R')
+``
+3. Look at the output from the console. 
+    a. If the outputs ends with "Done.", then proceed to Step 4. 
+    b. If the output asks you to install a package, do so, then return to Step 2. 
+    c. If you get a different error, email the text of error to 
+       nathanvan AT northwestern FULL STOP edu. 
+4. Click the **Knit HTML** button. Be patient, it may take a minute to complete. 
+5. If the 'knitting' worked, you will see a pretty version of this document pop up.
+6. Close the pretty version and come back to the plain text to do the assignment.
+7. After every question, click the **Knit HTML** button to make sure that the output is as expected. 
+8. After finishing the assignment, hand in the knitted 'stat-202-hw-1-version-2.html' file via [BlackBoard](https://courses.northwestern.edu/).
+
+## Introduction 
+
+The 'stat-202-hw-1-version-2.Rmd' file that you are currently reading is the **source file** 
+that RStudio uses to produces the pretty 'stat-202-hw-1-version-2.html' file. 
+
+An '.Rmd' file combines three types of information into one place: 
+
+1. Prose. 
+2. Formatting information so that some words are **bold**, others are *italic*, etc. Go [here](http://rmarkdown.rstudio.com) for further details. 
+3. R code and graphs. 
+
+R code inside of '.Rmd' files is encapsulated in R code "chunks". For example, the code in Step 2, on lines 11 to 13, was an example of an R code chunk. When you clicked the **Knit HTML** button, RStudio (i) applied the formatting information to the prose, (ii) ran the R code in the chunk, and then (iii) 'knit' together the formatted text, R code, and R output into the pretty 'stat-202-hw-1-version-2.html' file that was then immediately opened in RStudio's browser. 
+
+Note that the output displayed in the '.html' file is the same as the output that appeared on the console when you run it with CTRL-Enter. This is what makes '.Rmd' files powerful: you can work on the homework by executing commands with CTRL-Enter, and after you are satisfied with the output you can knit it together to turn it in. 
+
+## A short intro to R
+In this section we will practice using R inside of an '.Rmd' file. Follow the 
+instructions in the following code chunk. (Note: the R code will not appear in the knitted output because of passing `echo=FALSE` and `eval=FALSE` in the setup of the code chunk. Do not be concerned.)
+
+```{r, echo=FALSE, eval=FALSE}
+# In an R code chunk, the pound sign indicates that the line you are reading
+# is a comment. You can tell this at a glance because RStudio automatically colors
+# comments green. You should read all of the comments in the file. 
+
+# R can be used as a simple calculator. 
+
+# Put your cursor on the next line. Hit CTRL-Enter.
+1+1
+
+# In the console below this screen you should see: 
+# > 1+1
+# [1] 2
+# >
+
+# Try something that looks a bit more like algebra. Again, put your 
+# cursor on the next line and hit CTRL-Enter. 
+x <- 1+3
+
+# This code means: add 1 plus 3 and store the result in x. 
+# What you should see is: 
+# > x <- 1+3
+# > 
+# Note that in this case, R doesn't output anything on the console. No output
+# usually means things worked as expected. 
+
+# So how do we access the value of x? 
+# Try hitting CTRL-Enter on the next line.
+x 
+
+# This gets you: 
+# > x 
+# [1] 4
+
+# Now R implements the standard PEMDAS order of operations. Note that
+# the two expressions are not equivalent to each other. (You know what 
+# to do from now on with CTRL-Enter.)
+x^2/4
+x^(2/4)
+
+# R can also work with vectors and matrices.
+# Let's generate a vector that counts from 1 to 9. 
+1:9
+
+# That gives you
+# > 1:9
+# [1]  1  2  3  4  5  6  7  8  9
+
+# Let's store that in a variable:
+vectorA <- 1:9
+
+# Predict what the following expressions will do: 
+vectorA + 10
+3 * vectorA
+vectorA^2
+
+# Did you get them right? 
+# Answers: 
+# ... Add 10 to each element in the vector
+# ... Multiply each element in the vector by 3
+# ... Square each element in the vector 
+
+# Of prime importance for this course are the statistical functions 
+# that we can use. For example, what do these do? 
+mean(vectorA)
+median(vectorA)
+
+# Answers:
+# ... caculates the mean
+# ... caculates the median
+```
+
+## Assignment 
+As discussed in class the Behavioral Risk Factor Surveillance System (BRFSS) is an annual telephone survey of people living the United states. Further information is available [from the CDC](http://www.cdc.gov/brfss/).
+
+A 20,000 record subset of the 2013 BRFSS is provided by [OpenIntro Statistics](http://www.openintro.org/) for public use. The setup script that you ran in Step 2 loaded that subset into the variable `cdc`. 
+
+Use the R code chunk below to explore the data and make a few charts. As before, this code will not be present in the knitted output. 
+
+```{r, echo=FALSE, eval=FALSE}
+# View the first six rows of the data 
+head( cdc )
+
+# View the last six rows of the data
+tail( cdc )
+
+# Explore the data in a spreadsheet.
+#  *** Warning **** 
+#   Running the following command will HIDE these instructions. 
+#   Click on the 'stat-202-hw-1-version-2.Rmd' tab to return to these 
+#   instructions after you explored the spreadsheet.
+View( cdc )
+
+# For the genhlth column ... 
+#
+# ... make a table of raw counts 
+table( cdc$genhlth )
+#
+# ... make a table of proportions 
+# ... Step 1: How many records? 
+nrow(cdc)
+# ... Step 2: Divide the raw counts by the number of records
+table( cdc$genhlth ) / nrow( cdc )
+#
+# ... make a pie chart 
+#     *** Warning *** 
+#     The pie chart appears in the bottom left window of RStudio.
+#     If it is too small to see well, click the "Zoom" button for that 
+#     window. 
+pie( table(cdc$genhlth) )
+#
+# ... NB. The pie function *requires* a table as input
+#         If you attempt to run 
+#             pie( cdc$genhlth )
+#         you will get a cryptic error message. 
+#
+# ... make a bar plot 
+barplot( table( cdc$genhlth ) )
+#
+# ... and put the pie chart and the barplot side by side
+par(mfrow=c(1,2))
+  pie( table(cdc$genhlth) )
+  barplot( table( cdc$genhlth ) )
+par(mfrow=c(1,1))
+
+# And for the height column ... 
+# 
+# ... make a histogram 
+hist( cdc$height  )
+# 
+# ... add more bars to the histogram by increasing the 
+#     number of breakpoints 
+hist( cdc$height, breaks=25 )
+#
+# ... find the mean
+mean( cdc$height )
+#
+# ... find the median 
+median( cdc$height )
+#
+# ... find the five number summary
+summary( cdc$height )
+#
+# ... making a boxplot
+boxplot( cdc$height )
+```
+
+
+### Question #1 
+
+The columns of the `cdc` data frame are:
+
+ * `genhlth`  What is your general health? 
+ * `exerany`  Do you ever exercise? (0 = No, 1 = Yes)
+ * `hlthplan` Do you have insurance? (0 = No, 1 = Yes)
+ * `smoke100` Have you smoked 100 cigarettes in your life? (0 = No, 1 = Yes)
+ * `height`   How tall are you in inches? 
+ * `weight`   How much do you weigh in pounds? 
+ * `wtdesire` How much would you like to weight? 
+ * `age`      What is your age in years? 
+ * `gender`   Are you male or female? 
+
+WHICH VARIABLES are quantitative and which are categorical? 
+
+### Question #2
+
+Make a pie chart and a bar plot for gender:
+```{r}
+par(mfrow=c(1,2)) # <- leave this line
+
+  ## Code for the pie chart: 
+  pie( table( cdc$gender)  )
+
+  ## Code for the bar chart goes below here: 
+  barplot( table(cdc$gender ))
+
+par(mfrow=c(1,1)) # <- leave this line
+```
+
+REPLACE this message with a short description of the distribution of gender in the sample. 
+
+COMMENT on which display you prefer and **why**. You are allowed to say pie chart, it is not a trick question. Always support your opinion with an explanation. 
+
+### Question #3 
+
+Choose a categorical variable besides `genhlth` and `gender` in the `cdc` data set. Make a pie chart and a bar chart for that variable: 
+```{r}
+par(mfrow=c(1,2)) # <- leave this line
+
+  ## Code for the pie chart: 
+
+  ## Code for the bar chart goes below here: 
+
+par(mfrow=c(1,1)) # <- leave this line
+```
+
+REPLACE this message with a short description of the distribution of the variable. 
+
+COMMENT on which display you prefer and **why**. 
+
+### Question #4
+
+Make a histogram for `height`:  
+```{r}
+# Code for the histogram goes below this line: 
+
+
+``` 
+
+DESCRIBE the distribution of height in this sample (e.g. shape, center, spread, and deviations from the pattern). 
+
+Calculate the mean and the median of `height`. 
+```{r}
+# Code to calculate the mean goes below this line: 
+
+# Code to calculate the median goes below this line: 
+
+
+```
+
+EXPLAIN why the values of the mean and median are either (i) the same or (ii) different. 
+
+WHICH is better measure of center for these data?
+
+### Question #5
+
+Make a histogram and boxplot for `wtdesire`:  
+```{r}
+par(mfrow=c(1,2)) # <- leave this line
+
+# Code for the histogram goes below this line: 
+
+# Code for the boxplot goes below this line: 
+
+
+par(mfrow=c(1,1)) # <- leave this line
+``` 
+
+COMPARE AND CONTRAST the two displays. 
+
+DESCRIBE the distribution of desired weight in this sample (e.g. shape, center, spread, and deviations from the pattern). 
+
+Calculate the mean and the median of `wtdesire`. 
+```{r}
+# Code to calculate the mean goes below this line: 
+
+
+# Code to calculate the median goes below this line: 
+
+
+
+```
+
+EXPLAIN why the values of the mean and median are either (i) the same or (ii) different. 
+
+WHICH is better measure of center for these data?
+
+### Question #6
+Generate a five number summary for `height`. 
+
+```{r}
+# Code to calculate the five number summary goes below this line: 
+
+
+```
+
+The following code generates a side-by-side boxplot for each gender's height. 
+```{r}
+# Read the ~ sign as "by", i.e. a boxplot of height by gender of the cdc data: 
+boxplot(height ~ gender, data=cdc)
+
+```
+
+WHAT is revealed by the side-by-side boxplot that is hidden in the five number summary? 
+
+
+### Question #7
+In this question we will compare a person's reported health status with how much weight a person wants to lose. 
+
+```{r}
+## Step 1: Add a column to the cdc data frame for desired weight loss 
+cdc$wtloss <- cdc$wtdesire - cdc$weight 
+
+## Step 2: Generate boxplots of desired weight loss by general health status 
+## ... Note: the ylim argument zooms in the boxplot to the range -100 to 100 lbs.
+boxplot( wtloss ~ genhlth, data = cdc, ylim=c(-100,100))
+
+## Step 3: Add a horizontal line at zero weight loss desired 
+abline( h = 0 )
+
+```
+
+WRITE A PARAGRAPH (at least 5 sentences!) INTERPRETING this graph. 
