@@ -2,7 +2,7 @@
 ## http://www.stat.cmu.edu/~nmv/setup/stat202/hw-2.R
 ##
 ##
-## Last update: 30-September-2014 by Nathan VanHoudnos
+## Last update: 1-November-2014 by Nathan VanHoudnos
 
 ## Set the required package list
 required.packages <- NULL
@@ -41,10 +41,12 @@ for (pkg in required.packages) {
 }
 
 cat('Attempting to load required datasets...\n')
-cat('... cdc: BRFSS subset from Lecture 1-21\n')
-source.setup( "data/cdc.R" )
 cat('... animals: Animal gestation data from Lecture 48-61\n')
 source.setup( "data/animals.R" )
+cat('... college: Body image data from 34-47\n')
+source.setup( "data/college.R" )
+cat('... cdc: BRFSS subset from Lecture 1-21\n')
+source.setup( "data/cdc.R" )
 
 ## Clean up
 rm(source.setup, required.packages)
