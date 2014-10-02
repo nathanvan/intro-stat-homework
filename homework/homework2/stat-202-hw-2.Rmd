@@ -1,0 +1,540 @@
+---
+title: "Homework 2"
+author: "YOUR NAME"
+date: "10/01/2014"
+output: html_document
+---
+To prepare for this homework, do the following: 
+
+1. On line 3 of this document, replace "YOUR NAME" with your name. 
+2. Place your cursor on line 12 of this document and press CTRL-Enter:
+```{r}
+source('http://www.stat.cmu.edu/~nmv/setup/stat202/hw-2.R')
+```
+3. Look at the output from the console. 
+    a. If the outputs ends with "Done.", then proceed to Step 4. 
+    b. If the output asks you to install a package, do so, then return to Step 2. 
+    c. If you get a different error, email the text of error to 
+       nathanvan@northwestern.edu . 
+4. Click the **Knit HTML** button. Be patient, it may take a minute to complete. 
+5. If the 'knitting' worked, you will see a pretty version of this document pop up.
+6. Close the pretty version and come back to the plain text to do the assignment.
+7. After every question, click the **Knit HTML** button to make sure that the output is as expected. 
+8. After finishing the assignment, hand in the knitted 'stat-202-hw-2.html' file via [BlackBoard](https://courses.northwestern.edu/).
+
+## R lesson
+You should CTRL-enter your way through the follow R code chunks. They will not be displayed in the HTML output. 
+
+### Lecture #3 (pp. 34-47): Categorical variables
+```{r, echo=FALSE, eval=FALSE}
+## Question: Are men and women just as likely to think their weight is about right?
+
+## Data: 
+head(college)
+
+## ********************
+## Make a table in R  *
+## ********************
+##
+## Step 1: Identify the response and explanatory variables 
+## ... body.image: the response variable 
+## ... gender    : the explanatory variable
+##
+## Step 2: Cross tabulate with xtabs
+## ...  Read the following line of R code as:  
+##         cross (x) tabulate (tabs) the data `college` by
+##         the response `body.image` and 
+##         the explanatory variable `gender` 
+## xtabs(   ~  body.image + gender, data=college)
+##        |        |          |             |
+##        |        |          |             + data 
+##        |        |          + explanatory variable 
+##        |        + response variable 
+##        + nothing here, just a space 
+## 
+## And actually run the code ...
+xtabs(   ~  body.image + gender, data=college)
+##              gender
+## body.image    Female Male
+##  Underweight     37   73
+##  About Right    560  295
+##  Overweight     163   72
+
+## What happens if you reverse body.image and gender? 
+xtabs(   ~  gender + body.image, data=college)
+##
+## Is that what you expected? 
+
+## *******************************************
+## Make a conditional proportions table in R *
+## *******************************************
+##
+## Step 1: Make a table with the explantory variable 
+##         in the columns and the response variable on the 
+##         rows AND save the table in a variable for later use
+body.image.by.gender <- xtabs( ~ body.image + gender, data=college)
+## 
+## Note: R didn't output anything when we stored the table in 
+##       in a variable. That means it worked. 
+##       To check it, print the variable: 
+print( body.image.by.gender )
+##
+## Step 2: Convert the table to a column proportion table 
+##         with the prop.table function 
+## ... Read the following command as:
+##       convert the table `body.image.by.gender` to a 
+##       proportion table, using margin 2, i.e. the columns 
+prop.table( body.image.by.gender, margin=2)
+##              gender
+## body.image        Female       Male
+##   Underweight 0.04868421 0.16590909
+##   About Right 0.73684211 0.67045455
+##   Overweight  0.21447368 0.16363636
+
+## What happens if you use margin = 1, i.e. the rows? 
+prop.table( body.image.by.gender, margin=1)
+##
+## Is that what you expected? 
+
+
+## ***********************
+## Make a bar plot in R  *
+## ***********************
+##
+## Step 1: Make a conditional proportions table (see above) and 
+##         save it a variable
+props.body.image.by.gender <- prop.table( body.image.by.gender, margin=2)
+##
+## Step 2: Check that the columns sum to 1 with the add margins command
+addmargins( props.body.image.by.gender )
+##
+## Note: If the columns do not sum to to 1, try making your conditional 
+##       proportions table again... you either 
+##       (i)  reversed the explantory and response variables in xtabs, or
+##      (ii)  specified the wrong margin 
+
+## Step 3: Create the barplot 
+barplot( props.body.image.by.gender, beside=TRUE, legend=TRUE)
+## 
+## Notes: 
+##   (i)   beside=TRUE makes a side-by-side barplot, see help(barplot) for
+##                     other kinds of bar plots R can make
+##   (ii)  legend=TRUE adds the box with the category labels
+##   (iii) The legend will sometimes occlude part of the plot. To fix it 
+##         make the graph window bigger by clicking on the "larger shaded square"
+##         in top right corner of the pane with the graph
+
+```
+
+### Lecture #4 ( pp. 48-61 ): Quantitative variables 
+```{r, echo=FALSE, eval=FALSE}
+## Question: Do the gestational periods of animals differ depending on the 
+##           longevity of the animal? 
+
+## Data
+head(animals)
+
+## Step 2: Cross tabulate with xtabs
+## ...  Read the following line of R code as:  
+##         cross (x) tabulate (tabs) the data `college` by
+##         the response `body.image` and 
+##         the explanatory variable `gender` 
+## xtabs(   ~  body.image + gender, data=college)
+##        |        |          |             |
+##        |        |          |             + data 
+##        |        |          + explanatory variable 
+##        |        + response variable 
+##        + nothing here, just a space 
+## 
+## And actually run the code ...
+xtabs(   ~  body.image + gender, data=college)
+
+
+## *********************
+## Make a scatterplot  *
+## *********************
+##
+## Step 1: Make the simplest possible scatterplot 
+## ... Read the following line of R code as: 
+##        plot the response variable `gestation` by
+##        the explanatory variable `longevity` from the 
+##        data `animals`
+## plot( gestation ~ longevity, data=animals )
+##         |             |             |       
+##         |             |             + data
+##         |             + explanatory variable
+##         + response variable 
+##
+## And actually run the code ...
+plot( gestation ~ longevity, data=animals )
+
+## Step 2: Remake the plot with labels 
+plot( gestation ~ longevity, data=animals, 
+      xlab="Longevity (years)", 
+      ylab="Gestation (days)"   )
+##
+## Note that: 
+##    1. xlab is the label for the x axis
+##    2. ylab is the label for the y axis
+
+
+## Two possible gotchas: 
+##    1. The last part of the command is the close paren ')'.
+##       This closes the open paren from 'plot( '. 
+##
+##       If you miss the close paren, R will **eventually** throw an
+##       error once it realizes that the plot function has not closed
+##       properly. For example, CTRL-Enter all the way down past 1+1
+plot( gestation ~ longevity, data=animals, 
+      xlab="Longevity (years)", 
+      ylab="Gestation (days)"   
+
+## Some other R code
+1 + 1
+##
+##       This generates the error: 
+##
+##           Error: unexpected numeric constant in:
+##           "## Some other R code
+##           1"
+##
+##        which is somewhat cryptic because it doesn't alert you to the
+##        fact that the error was that the ' ylab="Gestation (days)" ' 
+##        line didn't end with a close paren. 
+##
+##    2. In between the arguments are commas ','. Again, if you 
+##       miss them R will throw errors. 
+## 
+##       For example, I deleted the comma on the xlab line:
+plot( gestation ~ longevity, data=animals, 
+      xlab="Longevity (years)" 
+      ylab="Gestation (days)" )
+## 
+##       This generates the error 
+##            Error: unexpected symbol in:
+##            "xlab="Longevity (years)"
+##            ylab"
+## 
+##       Which is, perhaps, less cryptic. 
+
+
+## *************************
+## Calculate a correlation *
+## *************************
+##
+## Step 1: Use the cor function
+cor( animals$gestation, animals$longevity )
+
+## What happens if you reverse the arguments?
+cor( animals$longevity, animals$gestation  )
+##
+## Did this surprise you? 
+
+## **************************
+## Fit a least squares line *
+## **************************
+##
+## Step 1: Make a scatterplot with the response variable 
+##         on the y axis and the explanatory variable on the 
+##         x axis 
+plot( gestation ~ longevity, data=animals, 
+      xlab="Longevity (years)",
+      ylab="Gestation (days)" )
+##
+## Step 2: Fit least squares model using the same formula and 
+##         data as the plot, and store it in a variable 
+animal.lm <- lm( gestation ~ longevity, data=animals )
+##               \\\\\\\\\\\\\\\\\\\\\          |
+##                   |                          + same data
+##                   + same formula from plot
+## 
+## Step 3: Add the line to the plot with abline
+abline( animal.lm )
+##
+## Step 4: Check that the line looks appropriate. 
+##
+## > no R code will help you for this part. :) 
+
+## *********************************************
+## Make a prediction from a least squares line *
+## *********************************************
+## 
+## Step 1: Fit a least squares line as above
+## 
+## Step 2: Extract the coefficients from the model
+coef( animal.lm )
+## (Intercept)   longevity 
+##   21.71286    13.12640 
+##    |           |
+##    |           + the slope "b"
+##    + the intercept "a"
+##
+##  For the line 
+##      y = a + bx 
+##
+## Step 3: Manually calculate the prediction. 
+##
+##         For example, predict the gestation of an animal that 
+##         lives for 35 years 
+## 
+21.71286 + 13.12640 * 35
+## [1] 481.1369
+## 
+##          We predict the animal would have a gestation of 481 days. 
+```
+
+
+## Question #1 (35 pts)
+
+In this question we will use the CDC data to examine the relationship between the `exerany` variable and the `genhlth` variable. Specifically, how does the general health status of people who exercise differ from the general health status of those that do not exercise?
+
+First, answer the following questions (5 pts): 
+
+ * **What is the response variable?** 
+ 
+ * **What is the explanatory variable?** 
+ 
+ * Suppose that genhlth is the row variable and exerany is the column variable.   
+   **Do we need a conditional row table or a conditional column table to answer the
+    question?** 
+
+**Cross tabulate the response and explanatory variables:** (5 pts)
+```{r}
+## Recall that the data is stored in the cdc data frame
+head(cdc)
+
+## HINT: 
+## xtabs(   ~          +          , data=cdc)
+##        |        |          |           |
+##        |        |          |           + data 
+##        |        |          + explanatory variable 
+##        |        + response variable 
+##        + nothing here, just a space 
+
+## Code to generate the table goes here:
+
+
+```
+
+**Make a conditional proportion table where the response variable is conditioned on the explantory variable.**  (5 pts)
+```{r}
+
+## Step 1 code goes here:
+
+## ... Please print your Step 1 table: 
+
+## Step 2 code goes here: 
+
+
+```
+
+**Make a bar plot for your conditional proportion table**  (5 pts)
+```{r}
+
+## Step 1 code goes here:
+
+## Step 2 code goes here: 
+
+## Step 3 
+##
+## HINT: 
+## barplot(     , beside=TRUE, legend=TRUE)
+##           |
+##           + variable containing the proportion table 
+##
+## Step 3 code goes here: 
+
+
+```
+
+
+Please answer the following questions: 
+
+* **How does the general health status of people who exercise differ from the general health status of those that do not exercise?** (Answer with a paragraph, at least 5 sentences.)  (10 pts)
+
+
+* **From these data, can you conclude that the association between general health status and exercising is causal? Why or why not?** (5pts)
+
+
+## Question #2 (35 pts)
+
+In this question we will use the CDC data to examine the relationship between the `hlthplan` variable and the `genhlth` variable. Specifically, does having health insurance affect someones general health? 
+
+First, answer the following questions (5 pts): 
+
+ * **What is the response variable?** 
+ 
+ * **What is the explanatory variable?** 
+ 
+ * If `genhlth` is the **column** variable and  `hlthplan` is the **row** variable.   
+   **Do we need a conditional row table or a conditional column table to answer the
+    question?** 
+
+**Cross tabulate the response and explanatory variables:** (5 pts)
+```{r}
+
+## Code to generate the table goes here:
+
+
+```
+
+**Make a conditional proportion table where the response variable is conditioned on the explantory variable.**  (5 pts)
+```{r}
+
+## Step 1 code goes here:
+
+## ... Please print your Step 1 table: 
+
+## Step 2 code goes here: 
+
+
+```
+
+**Make a bar plot for your conditional proportion table**  (5 pts)
+```{r}
+
+## Step 1 code goes here:
+
+## Step 2 code goes here: 
+
+## Step 3 code goes here: 
+
+```
+
+
+Please answer the following questions: 
+
+* **How does the general health status of people without health plans differ from those that do have health plans?** (Answer with a paragraph, at least 5 sentences.)  (10 pts)
+
+
+* **From these data can a policy maker conclude a policy designed to increase the number of people with health plans will lead to higher proportions of healthier people?** (5pts)
+
+
+## Question #3 (10 pts)
+
+In her official capacity as first lady, Michelle Obama has advocated for exercise. In his official capacity as president, Barack Obama has advocated for increasing the proportion of people with health insurance. 
+
+Pretend you work for the CDC and that you helped collect the BRFSS data that we analyzed in Questions #1 and #2. Further pretend that President Obama calls you to help settle a 
+marital disagreement. He asks: 
+
+> Hi, YOUR NAME, I have a question for you.   
+>
+> I think that increasing the number of people with health insurance will make our 
+> country healthier. Michelle thinks that increasing the number of people who 
+> exercise will make our country healthier. 
+>
+> According to this BRFSS data that you collected, who is right? Could you think 
+> about it and email me the answer? 
+
+Please answer the President's question as if you were sending him an email. (10 pts)
+
+
+
+## Question 4 (50 pts)
+
+This question will use the animal data with and without the elephant. 
+
+First, we create a copy of the data without the elephant. Do not change this code! 
+```{r}
+## What is the row number of the elephant?
+elephant.number <- which( animals$animal == 'elephant' )
+
+## Make a copy of the data without the elephant
+animals.no.elephant <- animals[-elephant.number,]
+```
+
+**Make a scatterplot (with labels!) for the `animals` dataset ** (5 pts)
+```{r}
+
+## Code goes here 
+
+
+```
+
+**Make a scatterplot (with labels!) for the `animals.no.elephant` dataset ** (5 pts)
+```{r}
+
+## Code goes here 
+
+
+```
+
+**Find the value of the correlation between gestation and longevity for both data sets.** (5 pts)
+
+```{r}
+
+## Code for correlation in the animals data
+
+
+## Code for correlation in the animals.no.elephant data
+
+
+```
+
+**Why did the correlation change the way it did?** (5 pts)
+
+The elephant was an outlier that kept the linear pattern. Therefore, removing it would decrease the value of the correlation. 
+
+**Fit a regression line for the `animals` dataset**(5pts)
+
+```{r}
+
+## Step 1
+
+
+## Step 2
+
+
+## Step 3
+
+
+
+```
+
+
+**Predict the gestation of an animal that lives 25 years using the `animals` regression line.**(5pts)
+
+```{r}
+
+## Step 1 (done above, no code needed)
+
+## Step 2 code goes here
+
+## Step 3
+
+
+```
+
+**Fit a regression line for the `animals.no.elephant` dataset**(5pts)
+
+```{r}
+
+## Step 1
+
+
+## Step 2
+
+
+## Step 3
+
+
+
+```
+
+**Predict the gestation of an animal that lives 25 years using the `animals.no.elephant` regression line.**(5pts)
+
+```{r}
+
+## Step 1 (done above, no code needed)
+
+## Step 2 code goes here
+
+
+## Step 3
+
+
+```
+
+
+**Explain (i) why the two predictions differed and (ii) which prediction you feel is more reasonable.** (10 pts)
+

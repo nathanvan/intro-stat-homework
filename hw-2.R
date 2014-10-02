@@ -43,6 +43,10 @@ for (pkg in required.packages) {
 cat('Attempting to load required datasets...\n')
 cat('... animals: Animal gestation data from Lecture 48-61\n')
 source.setup( "data/animals.R" )
+## Add in the no elephant data
+elephant.number <- which( animals$animal == 'elephant' )
+animals.no.elephant <- animals[-elephant.number,]
+## 
 cat('... college: Body image data from Lecture 34-47\n')
 source.setup( "data/college.R" )
 cat('... cdc: BRFSS subset from Lecture 1-21\n')
