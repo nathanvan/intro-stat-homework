@@ -5,7 +5,7 @@
 ## Last update: 8-October-2014 by Nathan VanHoudnos
 
 ## Set the required package list
-required.packages <- c('venneuler')
+required.packages <- c('VennDiagram')
 
 ## Function to load R code
 ## ... based off of: 
