@@ -1,0 +1,108 @@
+---
+title: "Homework 3"
+author: "YOUR NAME"
+date: "10/08/2014"
+output: html_document
+---
+To prepare for this homework, do the following: 
+
+1. On line 3 of this document, replace "YOUR NAME" with your name. 
+2. Click the **Knit HTML** button. Be patient, it may take a minute to complete. 
+3. If the 'knitting' worked, you will see a pretty version of this document pop up.
+4. Close the pretty version and come back to the plain text to do the assignment.
+5. After every question, click the **Knit HTML** button to make sure that the output is as expected. 
+6. After finishing the assignment, hand in the knitted 'stat-202-hw-3.html' or 'stat-202-hw-3.docx' file via [BlackBoard](https://courses.northwestern.edu/).
+
+## Notes
+
+* Questions in this homework are drawn from The Basic Practice of Statistics. 
+
+* These homework questions are very similar the questions that will be on the midterm. 
+
+## Question 1 (35 pts)
+A study of the students taking distance learning courses at a university finds that they are mostly older students not living in the university town. Let O be the event that the student is is 25 years old or older and L the event that the student is local. The study finds that P(O) = 0.7, P(L) = 0.25, and P(O and L) = 0.05. 
+
+ (A) **Make a two-way probability table.** (5 pts)
+ (B) **Describe P(O), P(L), P(O and L), P(O|L), and P(L|O) in words.** (5 pts)
+ (C) A non-traditional student a student that is either at least 25 years old or not local. **What is the probability that a randomly selected student is a non-traditional student?** (10 pts)
+ (D) **Given that a student is local, what is the probability that they are at least 25 years or older?** (5 pts)
+ (E) **Given that a student is at least 25 years or older, what is the probability that they are local?** (5 pts)
+ (F) **Is being local independent of being at least 25 years old?** (5pts)
+
+**Part A Solution** (5 pts)
+
+Fill out the following template. Please make sure your final answer is neatly formatted.
+     
+```{r, eval=FALSE}     
+
+        |   L   | not L | Total 
+--------|-------|-------|-------
+O       |       |       |       
+--------|-------|-------|-------  
+not O   |       |       |       
+--------|-------|-------|-------  
+Total   |       |       |       
+
+```
+
+
+**Part B Solution** (5 pts)
+
+* P(O) is the probability that ... 
+
+* P(L) is the probability that ... 
+
+* P(O and L) is the probability that ... 
+
+* P(O|L) is the probability that ... 
+
+* P(L|O) is the probability that ... 
+
+**Part C Solution** (10 pts)
+
+
+**Part D Solution** (5 pts)
+
+
+**Part E Solution** (5 pts)
+
+
+**Part F Solution** (5 pts)
+
+
+
+
+## Question 2 (20 pts)
+
+Internet sites often vanish or move, so that references to them can't be followed. In fact, 13% of of Internet sites reference in major scientific journals are lost within two years after publication. If a paper contains seven Internet references, what is
+
+ (A) **the probability that all seven are still good two years later?** (10 pts)
+
+ (B) **the probability that at least one reference is lost?** (10 pts)
+  
+In your answer, be sure to include the assumptions you made in order to calculate the probabilities. 
+
+**Part A Solution**
+
+
+**Part B Solution**
+
+
+
+## Question 3 (30 pts)
+
+Consider a standard deck of 52 cards (4 suits: clubs, hearts, diamonds, and spades with values Ace, 2-10, Jack, Queen, and King in each suit). The Jack, Queen, and King are "face" cards. 
+ 
+Questions: 
+
+ (A) **If you draw one card, what is the probability that the card is both red and a face card?** (10 pts)
+ (B) **If you draw one card, what is the probability that the card is either red or a face card?** (10 pts)
+ (C) Pretend you are ordering a snack. If you ask, "I would like an apple and an orange." you expect to get two pieces of fruit. If you ask, "I would like an apple or and orange." you expect to get one piece of fruit. If the previous parts of this question, answer (A), which uses AND is smaller than answer (B) which uses OR. **Why did AND give you a smaller probability?** (10 pts)
+  
+**Part A Solution** 
+
+
+**Part B Solution (Probability rules)**
+
+
+**Part C Solution**
