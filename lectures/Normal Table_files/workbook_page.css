@@ -1,0 +1,254 @@
+/* ========================================================================= */
+/* =================== Workbook Page CSS =================================== */
+/* ========================================================================= */
+
+/* NAVIGATION */
+/*=235-23*/
+/*a.togleft{cursor:pointer;position:absolute;left:212px;top:9px;height:29px;z-index:2}
+a.togleft.c{background:url(../images/grip-rtl.png) no-repeat;width:23px;left:212px}
+a.togleft.e{background:url(../images/grip-ltr.png) no-repeat;width:18px;left:235px}
+*/
+/* =================== Workbook Page ==================================== */
+/* Wireframe (also in a2)*/
+/* Header */
+#contextHelp{background-image:url(../images/backgrounds/k8.png);bottom:0;color:#CCC;left:0;margin:0 auto;padding:0 1.5em 1.5em;position:fixed;right:0;top:0;z-index:205}
+#contextHelp a{color:#8abee5;text-decoration:none}
+#contextHelp a span{color:#8abee5;font-weight:400}
+#contextHelp div{margin:0 auto;max-width:992px;padding:.25em}
+#contextHelp h5{color:#CCC;margin:1.5em auto 0;max-width:992px}
+#contextHelp li{padding:0 0 .5em}
+#contextHelp span{color:#e6cb45;font-weight:700}
+#contextHelp ul{list-style:none;margin:0}
+#coursetitle{display:inline;font-size:1.5em;padding:0;vertical-align:middle; padding:19px 0 0}
+#coursetitle a{display:inline-block;padding:.25em 0;text-decoration:none}
+#coursetitle a:focus,#coursetitle a:hover,#sysnav a:hover,#sysnav a:focus,#pagecontext a[href]:hover,#pagecontext a[href]:focus,.menou li a:hover{text-decoration:underline}
+#expInstr{background-color:#FFF8D4;border:1px solid #CCC399;clear:both;font-size:14px;line-height:1.35em;margin:1em;padding:.5em}
+#exp_controls{float:right;font-size:12px;padding:0 1.25em .3em}
+#hdr .logo{float:left;padding:.5em}
+#hdr .logo img{vertical-align:middle}
+#hdr a{color:#423A20;outline:medium;padding:6px 9px}
+#headnav{float:left;padding-right:1em; position:relative; top:7px}
+
+#lobjh{background:url("../images/learning-obj-bg.png") repeat-x bottom; height:auto;}
+#lobjh p{display:none}
+#lobjh.multi h3{background:url("../images/learning-objs.png") no-repeat;}
+#lobjh h3{background:url("../images/learning-obj.png") no-repeat; width:121px; height:61px; text-indent:-9999px; overflow:none; position:absolute; margin:9px 0px 0px -12px;}
+
+#lobjh ul {display:table; margin:0px; list-style:none; padding:0px 0px 0px 110px; border-collapse:separate; border-spacing:10px; position:relative; top:10px;}
+#lobjh ul li { display:table-row;}
+#lobjh ul li div { display:table-cell; width:188px; background:#eef6e3; border:1px solid #8bc541; padding:22px; font:normal 12px/18px Georgia, "Times New Roman", serif; height:100px;}
+
+#lobjh ul li div ul { margin:0px; padding:0px; display:block;}
+#lobjh ul li div ul li { margin:0px 0px 5px 0px; padding: 0px 0px 0px 18px; display:block; background: url("../images/fillBul.gif") no-repeat 2px 5px;}
+
+
+#md-activitycurrent a{background-color:#FEA;display:block;padding:5px 5px 5px 10px;}
+#md-sectioncurrent{background-color:#FEA;padding:.5em .1em .5em 1em}
+#md-syllabus_navigation h5 span{color:#999;font-variant:small-caps}
+#md-syllabus_navigation ol{margin-left:3em}
+#modnumInput{border:0;color:#656F7A;cursor:pointer;font:180% georgia,serif;text-shadow:0 0 1px #656F7A, 0 0 1px #656F7A, 3px 3px 5px #CCC;width:3em}
+#moduleOutline{line-height:1.5em}
+#modulePageH1{padding:.5em .5em 0;text-shadow:0 0 1px #656F7A, 0 0 1px #656F7A, 3px 3px 5px #CCC}
+#modulePageH1n{font-size:180%;margin:.25em 0 .25em -.25em;white-space:nowrap}
+#modulePageH1n span{display:inline;font-size:180%}
+#oli-content{padding:35px 87px 0 110px}
+.workbook_page detach #oli-content {padding:0}
+#oli-content > .section{border-bottom:1px solid #EFEFEF;margin-bottom:1.5em}
+#oli-content.activity{background-position:10px 12px;background-repeat:no-repeat;padding-left:112px}
+#oli-content.activity .graded{background-color:inherit;color:#b32d00;display:block;font-weight:700}
+#oli-content.activity .practice{background-color:inherit;color:#68b300;display:block;font-weight:700}
+#oli-content.activity .purposeType{font-size:8px;left:14px;padding-top:92px;position:absolute;text-align:center;width:92px}
+#oli-content.activity div.activity{padding:0 10px}
+#oli-content.activity.didigetthis{background-image:url(../images/icon_didigetthis.png)}
+#oli-content.activity.lab{background-image:url(../images/icon_lab.png)}
+#oli-content.activity.learnbydoing{background-image:url(../images/icon_learnbydoing.png)}
+#oli-content.activity.manystudentswonder{background-image:url(../images/icon_manywonder.png)}
+#oli-content.activity.myresponse{background-image:url(../images/icon_feedback.png)}
+#oli-content.activity.quiz{background-image:url(../images/icon_quiz.png)}
+#oli-content.activity.simulation{background-image:url(../images/icon_simulation.png)}
+#oli-content.activity.walkthrough{background-image:url(../images/icon_walkthrough.png)}
+#oli-footer{color:#777;padding:10px 0 0}
+#oli-footer .activityfooter{border-top:1px solid #09354B;color:#6D9BAF;margin:0 0 10px 10px;padding:10px;text-align:center}
+#oli-footer .activityfooter .oli{text-decoration:none}
+#oli-footer .activityfooter a{color:#6D9BAF}
+#oli-footer a,#oli-footer a:hover{color:#777}
+#oli-footerwrap{background:url(/branding/images/backgrounds/left-velvetstripes.png) repeat-y;margin:0 0 235px;padding:0 0 0 235px}
+#pHeadings{-moz-border-radius:10px;-webkit-border-radius:10px;border:1px solid #999;border-collapse:separate;border-radius:10px;color:#999;display:table;margin-left:0;min-width:250px}
+#pHeadings li,.material div.activitywrap.wbactivity{padding-bottom:0}
+#pHeadings ol{font-family:Georgia,"Times New Roman",Times,serif;list-style-type:none;margin:0 .5em .5em 1.75em}
+#pHeadings ol ol{font-size:93%;margin:0 0 0 2em}
+#pHeadings span.anchor{color:#5366a6;cursor:pointer;text-decoration:underline}
+#pHeadings td{padding:0 .25em}
+#pHeadings.off #pHeadingsTitle{background-image:url(../images/icons/16x16/actions/tgl0.gif)}
+#pHeadings.off ol{display:none}
+#pHeadingsTitle{background:url(../images/icons/16x16/actions/tgl1.gif) no-repeat 0 50%;color:#8a9196;cursor:pointer;font-size:12px;font-weight:700;padding:3px .25em 3px 20px;text-decoration:none}
+#pagecontext{color:#a9a79b;font-size:.87em;padding:.75em 0 .15em; display:none}
+#pagecontext a{color:#8C8B81;text-decoration:none}
+#pagecontext a.bcunit,#pagecontext a.bcmodule{font-size:1.14em;font-variant:small-caps}
+#paginationtop .prevnext{float:right;margin:5px 5px 0 0}
+#paginationtop .prevnext button{margin:5px 0 5px 10px;padding-bottom:3px;padding-top:3px}
+#paginationtop h1{margin:0px 0 5px 18px; padding:26px 0px 0px 0px;}
+#paginationtop h3{margin:0px 0 5px 18px; padding:26px 0px 0px 0px; color: #78828D; font-size: 28px; font-weight:normal; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; width:855px; height:30px;}
+#simAsmtSubmit{margin:1em auto;text-align:center}
+#sysnav{float:right;font-size:14px;margin-right:-150px;position:relative}
+#sysnav #sysusr{color:#667;font-size:11px;padding-top:.25em;text-align:right;white-space:nowrap; line-height:4px}
+#sysnav #sysusr a{color:#625b41;padding:5px 0}
+#sysnav #sysusr a.signout{letter-spacing:.15em}
+#sysnav a{display:inline-block;padding-bottom:3px;text-decoration:none;vertical-align:middle;white-space:nowrap}
+#sysnav h3{left:-999%;position:absolute}
+#tgllobj{color:#808079;cursor:pointer;font-size:12px;padding:.5em 1em;position:absolute;right:0;text-decoration:none;top:0}
+#tgllobj.off{background:url(../images/learning-obj.png) no-repeat;float:left;height:51px;margin:0 0 115px;overflow:hidden;position:static;text-indent:-9999px;width:121px}
+#tinyfooter{clear:right;font-size:75%;padding:10px;text-align:center}
+#xrefReviewUser{background:#D1DEF0;font-size:14px;padding:1em}
+* html #contextHelp{position:absolute}
+* html #pHeadings div{width:250px}
+* html .material div.activitywrap,.material div.activitywrap div.activityhead,.material div.activitywrap div.activity,.material div.activitywrap div.captionwrap,.material div.report,div.activityhead div.report{margin-left:0}
+* html div.activity{border:0}
+* html div.activitywrap{margin-left:-10%}
+
+.activityhead .purposeType{color:#666;font-size:10px;font-weight:700;width:auto;height:31px;overflow:hidden;/*text-indent:-9999px;*/}
+.activityhead .purposeType .graded{color:#b32d00;display:block}
+.activityhead .purposeType .practice{color:#68b300;display:block}
+.assessmentStatus{font-size:12px;padding:0 1.25em .3em}
+.details{font-size:75%;line-height:1.25em;padding:1em 0 .5em}
+.details label{color:#999;font-weight:400}
+.errorwrap{background-color:#FAF5EE;border-color:#BA5C39 #C87E5F;border-style:solid;border-width:1px;clear:both;padding:.25em .5em}
+.material div.activitywrap{margin:0}
+.md-activity span{ position: absolute; right: 0px; text-decoration: underline;}
+.md-module{padding:.25em 0 .5em 0em}
+.md-section{clear:right;padding:.5em 0 0 0em}
+.md-section h5{display:inline}
+.md-section span{clear:right;float:right}
+.md-section span a{margin-left:.3em}
+.md-section .md-section { padding:0px 0px 0px 1em;}
+.md-sequence{line-height:1.5em;padding-bottom:1em}
+.md-unit{padding:.5em 0 0 0}
+.menou li a{color:#545143;display:block;padding:5px;text-decoration:none}
+.olunit{width:500px;}
+.olmodule{width:475px;}
+.outlinectrl{font-size:12px;padding:.5em 0 1em}
+a.bigpicture{display:block;margin:1px 5px 1px 0;padding:0 0 5px;text-align:center}
+div#oli-container2,#oli-user4wrap{background-image:url(/branding/images/backgrounds/left-velvetstripes.png);background-repeat:repeat-y}
+div#oli-content.activity{background-color:transparent;border:0}
+.purpose.didigetthis .actContain {background:#F1F6DD}
+.purpose.checkpoint .actContain {background:#FCF8E9}
+
+
+#body .section-didigetthis .didigetthis, #body .section-learnbydoing .didigetthis 
+{background:url(../images/digt.png) #F1F6DD no-repeat; padding-top:35px; margin-left:60px; width:615px} 
+
+
+#body .section-didigetthis .didigetthis h5, #body .section-learnbydoing .didigetthis h5 {margin-left:40px}
+ #body .section-didigetthis .didigetthis .activity, #body .section-learnbydoing .didigetthis .activity {padding-left:10px}
+.section-didigetthis p, .section-learnbydoing p {padding:0 95px 0 0px}
+.purpose.quiz .actContain {background:#FBF1EE}
+.purpose.learnbydoing .actContain {background:#E2F2FC}
+.section-didigetthis .purpose.learnbydoing {background:url(../images/lbd.png) no-repeat #E2F2FC; padding-top:31px; margin-left:60px; width:615px}
+#body .section-learnbydoing {background:url(../images/lbd.png) #E2F2FC no-repeat; padding:35px 0 0 0; width:auto}
+#body .section-learnbydoing h2 {color: #0A334C;margin: 10px 95px 0 60px;}
+#body .section-didigetthis .learnbydoing h5 {margin-left:40px}
+ #body .section-didigetthis .learnbydoing .activity {padding-left:10px}
+.material .didigetthis, .material .purpose.quiz {background:none}
+.didigetthis h5, .didigetthis h3 a, .section-didigetthis h5, .section-didigetthis h3,.section-didigetthis h2 {color:#2B582B;  margin: 10px 95px 0 0px; display:block; font-size:21px; font-weight:normal; line-height:28px;}
+.learnbydoing h5, .section-learnbydoing h2, .sectionNest h5 {color:#0A334C;  margin: 10px 95px 0 30px; font-size:21px; font-weight:normal; line-height:28px;}
+.quiz h3 a.quiz {color:#BF0000; /*padding:22px 95px 20px 20px;*/ display:block;}
+.activityinfo {padding:10px 95px 0 60px}
+.activitywrap .activityinfo {padding:0}
+.purpose .activity {padding:15px 30px 0px 0px; width:auto}
+.material div.purpose div.activity {padding:0; width:auto}
+.material div.didigetthis h5 {margin:0}
+.activityhead .purposecheckpoint{background:url(../images/purpose-sprite.png) #FFF no-repeat 0 -65px; height:31px;}
+.activityhead .purposedidigetthis{background:url(../images/purpose-sprite.png) #FFF no-repeat 0 -32px; height:31px}
+.activityhead .purposedidigetthis span { font-family: Georgia,"Times New Roman",Times,serif;font-size: 15px;font-weight: bold; left: 57px; position: relative; top: 3px; color: #6F9E2F;}
+.activityhead .purposecheckpoint span { font-family: Georgia,"Times New Roman",Times,serif;font-size: 18px;font-weight: bold; left: 57px; position: relative; top: 3px; color: #FF8A00;}
+
+
+.material .activityhead div.purposedidigetthis {display:none}
+.lab .purposeType { }
+/*.lab .activityinfo {background:url(../images/lab.png) no-repeat; width:auto; height:31px}*/
+.lab .activityinfo h5 {background:#FFF; height:31px; line-height:28px; display:inline-block; padding:0 10px; margin-left:62px}
+
+.activityhead .purposelearnmore, .activityhead .purposemanystudentswonder { background:url(../images/purpose-sprite.png); background-position:0px 121px;}
+.activityhead .purposemanystudentswonder span,.activityhead .purposelearnmore span { font-size:10px; color:#47331C; text-transform:uppercase; letter-spacing:0.2em; font-weight:bold; position:relative; left:31px; top:3px;}
+.manystudentswonder h3 {margin:12px 94px 12px 23px; color:#ac9d74}
+.manystudentswonder h3 a {color:#6E5946; text-decoration:none;}
+.manystudentswonder h3 a:hover { text-decoration:underline;}
+.activityhead .purposemyresponse{background:url(../images/purpose-sprite.png) no-repeat 0 -192px #FFF; height:31px; width:auto;}
+.activityhead .purposemyresponse .scnReader { font-weight: bold !important; font-family: Georgia,"Times New Roman",Times,serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; left: 18px; top: 3px; color:#75a150;}
+.myresponse h3, .myresponse h3 a, .myresponse h5, .myresponse h5 a {color:#709e30; text-decoration:none;}
+.myresponse h3 a:hover, .myresponse h5, .myresponse h5 a:hover {text-decoration:underline;}
+.myresponse h3, .myresponse h5 {margin:12px 93px 12px 60px}
+.activityhead .purposepractice,.activityhead .purposelearnbydoing{background:url(../images/purpose-sprite.png) no-repeat 0 0 #FFF}
+.purposelearnbydoing span { color:#1270B2; font-family: Georgia,"Times New Roman",Times,serif; font-size: 15px; font-weight: bold; position:relative; top:3px; left: 57px; text-transform: lowercase;}
+.activityhead .purposequiz{background:url(../images/purpose-sprite.png) no-repeat 0 -96px #FFF}
+.activityhead .purposesimulation{width:auto; height:30px; overflow:hidden; background:#d7cfbf; height:30px; text-transform:uppercase; letter-spacing:0.2em;}
+.activityhead .purposesimulation .scnReader{font-weight:bold !important; font-family:Georgia, "Times New Roman", Times, serif; left:13px; font-size:10px; color:#47331C; top:3px;}
+.simulation  .actContain	{ border:none;}
+.activityhead .purposewalkthrough{background:url(../images/purpose-sprite.png) no-repeat 0 -285px #FFF; width:100%; overflow:hidden; height:30px}
+.activityhead .purposewalkthrough .scnReader { font-weight:bold !important; font-family:Georgia, "Times New Roman", Times, serif; left:13px; font-size:10px; color:#47331C; top:2px; letter-spacing: 0.2em; text-transform: uppercase;}
+.activitywrap.wbactivity{padding-bottom:0px}
+.pulloutwrap .activitywrap div  {margin-left:0}
+.pulloutwrap .activitywrap .captionwrap {margin:0 auto; width:80%;}
+
+/*div.section div.section{padding:0 1.5em 1.5em}*/
+
+h3.toggle,h4.toggle{background:url(../images/icons/16x16/actions/tgl0.gif) no-repeat 0 50%;color:#000;cursor:pointer;padding:3px 0 3px 20px;text-decoration:none}
+h3.togglecurrent,h3.toggleopen,h4.togglecurrent,h4.toggleopen{background:url(../images/icons/16x16/actions/tgl1.gif) no-repeat 0 50%;color:#000;cursor:pointer;padding:3px 0 3px 20px;text-decoration:none}
+table#pHeadings{margin:0 11% 1em;}
+table#pHeadings.off{-moz-opacity:.50;filter:alpha(opacity=50);opacity:.50}
+td.loaded{background:transparent none;cursor:auto;padding:0}
+td.loading{background:url(/branding/images/icons/16x16/animations/process-working-squares.gif) no-repeat;cursor:wait;padding:20px}
+
+
+
+/*ORGANIZE AND CLEAN UP*/
+
+/*SECTION*/
+.sectionContain											{ padding:0px 0px 0px 30px;}
+.sectionContain h1,.sectionContain h2,.sectionContain h3,.sectionContain h4,.sectionContain h5										{ margin-left:0px;}
+.sectionContain .image									{ padding:0px 0px 0px 0px; /*overflow:auto; IE7 Scroll Bar*/ display:block;}
+.sectionNest 											{ }
+.sectionNest .actContain								{ border:none;}
+/*.sectionNest h5											{ margin: 10px 0px 10px 60px; }*/
+.sectionNest .activity 									{padding:15px 30px 15px 0px; margin: 0px 0px 0px 0px; }
+
+.section-learnbydoing h2								{ width:auto;}
+.section-learnbydoing .sectionContain					{ border:1px solid #1371B2;}/* padding:.5em 0px .5em 30px;}*/
+.section-learnbydoing .sectionContain h2,.section-learnbydoing .sectionContain h3,.section-learnbydoing .sectionContain h1				{ margin-left:0px; }
+.section-learnbydoing .sectionContain p					{ padding-left:0px;}
+
+.section-didigetthis h2									{ width:auto; }
+.section-didigetthis .sectionContain					{ border:1px solid #8FC642; padding:.5em 0px .5em 30px;}
+
+/*SECTION SPRITES*/
+.section												{ margin:0px 0px 1.5em 0px;}
+.section .head											{ background:url(../images/purpose-sprite.png) no-repeat #FFF; height:30px;}
+.section-didigetthis .head								{ background-position:0px -32px;}
+.section-learnbydoing .head								{ background-position:0px 0px;}
+.section-checkpoint .head								{ background-position:0px -64px;}
+.section-lab .head 										{ background-position:0px -128px;}
+.section-manystudentswonder .head 						{ background-position:0px -223px;}
+.section-myresponse .head 								{ background-position:0px -192px;}
+.section-simulation .head 								{ background-position:0px -314px;}
+.section-walkthrough .head 								{ background-position:0px -284px;}
+.section.quiz .head 									{ background-position:0px -96px;}
+.section-didigetthis .sectionContain					{ background:#F1F6DD;}		
+.section-learnbydoing .sectionContain					{ background:#E2F2FC;}
+.section-checkpoint .sectionContain						{ background:#FCF8E9;}
+.section-lab .sectionContain							{ background:#FCF8E9;}
+.section-manystudentswonder .sectionContain				{ background:#;}
+.section-myresponse .sectionContain						{ background:#;}
+.section-simulation .sectionContain						{ background:#;}
+.section-walkthrough .sectionContain					{ background:#;}
+.section.quiz .sectionContain							{ background:#FBF1EE;}
+
+/*.section-didigetthis .sectionContain, .section-learnbydoing .sectionContain, .section-checkpoint .sectionContain, .section-lab .sectionContain, .section-manystudentswonder .sectionContain, .section-myresponse .sectionContain, .section-simulation .sectionContain, .section-walkthrough .sectionContain, .section.quiz .sectionContain {padding: 0.5em 0 0.5em 30px;}*/
+
+
+/*ACTIVITY BORDERS*/
+.actContain												{ }
+.didigetthis .actContain								{ border:1px solid #8FC642;}
+.learnbydoing .actContain								{ border:1px solid #1371B2;}
+.quiz .actContain										{ border:1px solid #BF0000;}
+.checkpoint .actContain									{ border:1px solid #FF8A00;}
+.manystudentswonder .actContain							{ border:none; color:#AC9D74;}
