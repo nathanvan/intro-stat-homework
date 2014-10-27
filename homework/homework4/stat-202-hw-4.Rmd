@@ -1,0 +1,259 @@
+---
+title: "Homework 4"
+author: "YOUR NAME"
+date: "10/17/2014"
+output: html_document
+---
+To prepare for this homework, do the following:
+
+1. On line 3 of this document, replace "YOUR NAME" with your name.
+2. Click the **Knit HTML** button. Be patient, it may take a minute to complete.
+3. If the 'knitting' worked, you will see a pretty version of this document pop up.
+4. Close the pretty version and come back to the plain text to do the assignment.
+5. After every question, click the **Knit HTML** button to make sure that the output is as expected.
+6. After finishing the assignment, hand in the knitted 'stat-202-hw-4.html' or 'stat-202-hw-4.docx' file via [BlackBoard](https://courses.northwestern.edu/).
+
+## Notes
+
+* These homework questions are very similar the questions that will be on the upcoming midterm.
+
+## Question 1 (25 pts)
+
+A student is trying to decide whether or not to major in Statistics. The student believes that she has a 75% chance of getting an A in Statistics 202. If she gets an A, she reasons that there is an 80% chance that she will major in statistics. If she doesn't get an A, she might major in statistics anyway, but only with a probability of 10%.
+
+Let $M$ be the event that she majors in statistics and $A$ the event that she gets an A.
+
+(A) Construct a probability tree for this problem. (5 pts)
+
+(B) Construct a two-way probability table for this problem. (5 pts)
+
+(C) What is the probability that she will major in statistics? (5 pts)
+
+(D) A friend of hers from high school calls her next year to catch up. She tells the friend that she is **not** majoring in statistics. Given this new information, what is the probability that she got an A in Statistics 202? (10 pts)
+
+### Part A Solution
+
+Here is a copy of the probability tree from lecture. Please modify it to be the
+correct probability tree.
+```{r, eval=FALSE}
+                   /--P(V|C)         = 0.90
+                  V
+          P(C)   /
+       +--0.40--<
+      /          \
+     C            not V
+    /              \--P(not V|C)     = 0.10
+---<
+    \              /--P(V|not C)     = 0.30
+     not C        V
+      \          /
+       +--0.60--<
+        P(not C) \
+                  not V
+                   \--P(not V|not C) = 0.70
+```
+
+### Part B Solution
+
+Here is a copy of the two way table from lecture. Please modify it to be the
+correct table.
+```{r, eval=FALSE}
+      |  V   | not V | Total
+------|------|-------|------
+C     | 0.36 | 0.04  |  0.40
+------|------|-------|------
+not C | 0.18 | 0.42  |  0.60
+------|------|-------|------
+Total | 0.54 | 0.46  |  1
+```
+
+### Part C Solution
+
+
+### Part D Solution
+
+
+## Question 2 (20 pts)
+
+Evanston, IL has approximately 75,000 people. According to the [Health Department](http://www.cityofevanston.org/assets/EPLAN_2011-2016%20ce.pdf), 42 cases of HIV have been diagnosed since 2005. Let H be the event that a person has HIV. We can approximate P(H) = 42/75000 = 0.00056.
+
+According to [Wikipedia](http://en.wikipedia.org/wiki/Diagnosis_of_HIV/AIDS#Accuracy_of_HIV_testing), (i) the probability that an HIV test will detect HIV in an HIV positive individual is 99.97%, and (ii) the probability that an HIV test is will falsely detect HIV in an HIV negative individual is 1.5%.
+
+We will model students in this class as randomly selected Evanston residents. Furthermore, we will assume that the outcomes for all students are independent.
+
+(A) What is the probability that a student in Stat 202 receives a positive test result? (5 pts)
+
+(B) We have 75 students. What is the probability that, if everyone was tested, at least one student would receive a positive result? (5 pts)
+
+(C) What is the probability that a student who tests positive for HIV actually has HIV?  (10 pts)
+
+$$A+B=c$$
+
+### Part A Solution
+
+
+### Part B Solution
+
+
+### Part C Solution
+
+
+
+## Question 3 (30 pts)
+
+In South Africa, [HIV prevalence is sharply divided along racial lines](http://en.wikipedia.org/wiki/South_Africa#HIV.2FAIDS) with 13.6% of blacks being HIV positive while only 0.3% of whites are HIV positive.
+
+For this question, assume that South Africa uses the same HIV test that the US uses.
+
+(A) If a black person in South Africa receives a positive HIV test, what is the probability that they are HIV positive? (10 pts)
+
+(B) If a white South African receives a positive HIV test, what is the probability that they are HIV positive? (10 pts)
+
+(C) Do the answers for (A) and (B) differ? Why or why not? (10 pts)
+
+
+### Part A Solution
+
+
+### Part B Solution
+
+
+### Part C Solution
+
+
+
+## Question 4 (30 pts)
+
+Occasionally, students email me reporting technical problems taking the checkpoints. A quick analysis suggest that these technical problems follow a Poisson distribution.
+
+Let C be a random variable denoting how many students had problems with a given checkpoint. The following data were (not really) observed:
+
+```{r, eval=FALSE}
+Checkpoint #  | 1 | 2 | 3 | 4 | 5 | 6 | 8 | 9 | 10 | 11 | 12 |
+--------------+---+---+---+---+---+---+---+---+----+----+----+
+c             | 0 | 1 | 1 | 2 | 0 | 2 | 3 | 1 | 1  |  0 | 0  |
+```
+
+Note that we skipped checkpoint 7.
+
+ (A) Give the probability distribution for C based off of these data (5 pts)
+ (B) What is the expected value of C? (5 pts)
+ (C) What is the standard deviation of C? (5 pts)
+ (D) What is the probability that at least 1 student will contact me because of a
+     technical issue with a checkpoint? (5 pts)
+ (E) If a student has already contacted me with a technical problem about a checkpoint,
+     what is the probability that at least one other student will contact me for the same
+     checkpoint? (10 pts)
+
+### Part A Solution
+
+Please fill out the following table:
+
+```{r, eval=FALSE}
+c             |   0  |   1  |   2  |   3  |
+--------------+------+------+------+------+
+P(C = c)      |      |      |      |      |
+```
+
+### Part B Solution
+
+
+### Part C Solution
+
+
+### Part D Solution
+
+
+### Part E Solution
+
+
+
+
+
+## Question 5 (20 pts)
+
+Larry Summers was the President of Harvard University from 2001 to 2006. In 2005, he gave a speech that, among other things, claimed that aptitude differences between men and women explained why men are over represented in science faculty positions at elite institutions like Harvard. Partially because of the controversy surrounding this speech, he (i) resigned as President of Harvard in 2006, and (ii) removed his name from consideration for Secretary of the Treasury in the Obama administration ([source](http://en.wikipedia.org/wiki/Lawrence_Summers)).
+
+In this homework question we will examine the mathematical part of his claims, not the assumptions that underlie them.
+
+If IQ is normally distributed, it possible for all three of the following statements to be true:
+
+1. The average woman is smarter than the average man.
+2. In fact, 97.5% of women are smarter than the average man.
+3. And yet, the top 2.5% of men are smarter than 99.85% of women.
+
+To prove this, assume that a woman's IQ is normally distributed with a mean of 100 and a standard deviation of 10, and answer the following questions:
+
+(A) What IQ are 97.5% of women smarter than? (5 pts)
+
+(B) What IQ are 99.85% of women below? (5 pts)
+
+(C) Suppose a man's IQ is normally distributed with a mean equal to the answer from part (A). Find the standard deviation necessary for 2.5% of men to have a higher IQ than the answer from part (B). (5 pts)
+
+(D) If men's and women's IQ scores are, in fact, normally distributed with the values claimed above, would that explain why the faculty of top institutions are dominated by men? Why or why not? (5 pts)
+
+
+### Part A Solution
+
+
+### Part B Solution
+
+
+### Part C Solution
+
+
+### Part D Solution
+
+
+## Question 6 (35 pts)
+
+[Larry Summers' actual claim was this](https://www.insidehighered.com/news/2005/02/18/summers2_18):
+
+> It does appear that on many, many different human attributes -- height, weight,
+> propensity for criminality, overall IQ, mathematical ability, scientific
+> ability -- there is relatively clear evidence that whatever the difference in
+> means -- which can be debated -- there is a difference in the standard deviation,
+> and variability of a male and a female population. And that is true with respect to
+> attributes that are and are not plausibly, culturally determined. If one supposes,
+> as I think is reasonable, that if one is talking about physicists at a top 25
+> research university, one is not talking about people who are two standard deviations
+> above the mean. And perhaps it's not even talking about somebody who is three
+> standard deviations above the mean. But it's talking about people who are three
+> and a half, four standard deviations above the mean in the one in 5,000, one
+> in 10,000 class. Even small differences in the standard deviation will
+> translate into very large differences in the available pool substantially out.
+
+Let's assume that IQs are normally distributed, with women's IQ having a mean of 100 and men's IQ having a mean of 100. Let us further assume that women's standard deviation is 10 and men's standard deviation is 11.
+
+(A) What is the IQ of a women 4 standard deviations from the mean? (5 pts)
+(B) What percentage of women have an IQ above the answer to part A? (5 pts)
+(C) Given that there are approximately 150,000,000 women in the US how many women
+    in the US have an IQ above the answer to part A? (5 pts)
+(D) What percentage of men have an IQ above the answer to part A? (5 pts)
+(E) Given that there are approximately 150,000,000 men in the US how many men
+    in the US have an IQ about the answer to part A? (5 pts)
+(F) What is the IQ of a man 4 standard deviations from the mean? (5 pts)
+(G) If the applicant pool for a new job at Harvard was restricted to the women from part (C)
+    and the men from part (E), and the odds of being selected from the job were the
+    same for all candidates, what is the probability that a woman would be hired? (5 pts)
+
+### Part A Solution
+
+
+### Part B Solution
+
+
+### Part C Solution
+
+
+### Part D Solution
+
+
+### Part E Solution
+
+
+### Part F Solution
+
+
+### Part G Solution
+
